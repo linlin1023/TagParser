@@ -1,0 +1,14 @@
+{
+  "name": "tagparse",
+  "version": "1.0.0",
+  "description": "Simple usage 1. Open index.html by any browser. 2. Input or paste text in the textarea. 3. Click 'Check Tag' button to see if the text is correctly tagged.",
+  "main": "tagparse.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.4"
+  }
+}
