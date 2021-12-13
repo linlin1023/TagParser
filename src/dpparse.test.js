@@ -1,4 +1,4 @@
-const { doparse } = require("./tagparse");
+import doparse from "./doparse"
 
 test("should output correctly tagged ", () => {
   const text = "<B><A>this is correct test case .</A></B><C>Finger cross</C>";
@@ -54,30 +54,29 @@ test("should output correctly tagged", () => {
   expect(result).toBe("Correctly tagged paragraph");
 });
 
-
 //having invalid tags
 test("should output correctly tagged", () => {
-    const text =
-      "<a>I am tagged, but not a <span> </span>valid tag that will be detected</a>,<c> I will be treated as normal text</b><d>";
-    const result = doparse(text);
-    expect(result).toBe("Correctly tagged paragraph");
-  });
+  const text =
+    "<a>I am tagged, but not a <span> </span>valid tag that will be detected</a>,<c> I will be treated as normal text</b><d>";
+  const result = doparse(text);
+  expect(result).toBe("Correctly tagged paragraph");
+});
 
 //empty input
 test("should output nothing", () => {
   const text = "";
   const result = doparse(text);
-  expect(result).toBe(undefined);
+  expect(result).toBe("");
 });
 
 test("should output nothing", () => {
   const text = undefined;
   const result = doparse(text);
-  expect(result).toBe(undefined);
+  expect(result).toBe("");
 });
 
-test("should output nothing", ()=>{
-    const text = null;
-    const result = doparse(text);
-    expect(result).toBe(undefined);
-})
+test("should output nothing", () => {
+  const text = null;
+  const result = doparse(text);
+  expect(result).toBe("");
+});

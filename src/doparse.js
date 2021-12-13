@@ -2,15 +2,10 @@ const OPEN = /\<[A-Z]\>/g;
 const CLOSE = /\<[\/][A-Z]\>/g;
 const TAG = /\<[\/]?[A-Z]\>/g;
 
-const tagparse = () => {
-  var text = document.getElementById("text").value;
-  document.getElementById("result").innerText = doparse(text);
-};
-
-exports.doparse = (text) => {
+const doparse = (text) => {
   if (!text) {
     //empty input, do not take any action
-    return;
+    return "";
   }
   var stack = [];
   var arr = text.match(TAG);
@@ -43,3 +38,5 @@ exports.doparse = (text) => {
     return `Expected ${expected} found #`;
   }
 };
+
+export default doparse;

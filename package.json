@@ -1,14 +1,19 @@
 {
   "name": "tagparse",
   "version": "1.0.0",
-  "description": "Simple usage 1. Open index.html by any browser. 2. Input or paste text in the textarea. 3. Click 'Check Tag' button to see if the text is correctly tagged.",
-  "main": "tagparse.js",
+  "private": "true",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.4.4"
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.4",
+    "jest": "^27.4.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }
